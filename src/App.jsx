@@ -1,11 +1,16 @@
-import { Button } from "./components/Ui/Button";
+import React from "react";
+import Movies from "./components/movies/Movies";
+import { TodoList } from "./components/todolist/TodoList";
+import { Header } from "./components/movies/Header";
 
-function App() {
+export const App = () => {
   return (
     <div>
-      <Button />
+      <Header />
+      <Movies />
+      {/* <TodoList /> */}
     </div>
   );
-}
+};
 
 export default App;
