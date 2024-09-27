@@ -1,7 +1,6 @@
 import React from "react";
 
 const TodoItem = ({ todo, toggleTask, removeTask }) => {
-  
   return (
     <ul className="Todo-Item">
       <li

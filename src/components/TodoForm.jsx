@@ -5,14 +5,13 @@ import "./Todo.css";
 
 const TodoForm = ({ addTask }) => {
   const [userInput, setUserInput] = useState("");
-  
 
   const handleChange = (event) => {
     setUserInput(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();  
+    event.preventDefault();
     if (userInput.trim() !== "") {
       addTask(userInput);
       setUserInput("");
@@ -38,7 +37,10 @@ const TodoForm = ({ addTask }) => {
         className="Todo-Input"
       />
       <button className="Todo-Button" onClick={resFun} type="submit">
-        <img src="https://cdn-icons-png.freepik.com/512/6459/6459958.png" alt="" />
+        <img
+          src="https://cdn-icons-png.freepik.com/512/6459/6459958.png"
+          alt=""
+        />
       </button>
       <ToastContainer />
     </form>

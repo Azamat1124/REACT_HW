@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="ToDo-list-div">
       <h1>Todo list📝</h1>
- 
+
       <h2>{todos.length}</h2>
       {loading ? (
         <Loading />
