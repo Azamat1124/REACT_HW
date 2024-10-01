@@ -1,64 +1,75 @@
 import React from "react";
 import styled from "styled-components";
 
+export const Button = ({ variant, click, children}) => {
+  return (
+    <StyledButton variant={variant} onClick={click}>
+      {children}
+    </StyledButton>
+  );
+};
 const StyledButton = styled.button`
-  padding: ${({ size }) =>
-    size === "large"
-      ? "15px 30px"
-      : size === "small"
-      ? "5px 10px"
-      : "10px 20px"};
-  font-size: ${({ size }) =>
-    size === "large" ? "18px" : size === "small" ? "12px" : "14px"};
-  background-color: ${({ variant }) => {
-    switch (variant) {
-      case "primary":
-        return "#007bff";
-      case "secondary":
-        return "#6c757d";
-      case "success":
-        return "#28a745";
-      case "danger":
-        return "#dc3545";
-      default:
-        return "#007bff";
-    }
-  }};
-  color: white;
-  border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 198px;
+    height: 48px;
+    border-radius: 10px;
+  transition: all 0.3s ease;
 
-  &:hover {
-    opacity: 0.8;
-  }
 
-  &:disabled {
-    background-color: #e0e0e0;
-    color: #6c757d;
-    cursor: not-allowed;
-  }
+  ${({ variant }) =>
+    variant === "outlined" &&
+    `
+    background-color: transparent;
+    color: #007bff;
+    border: 3px solid #4C94F0;
+  
+    &:hover {
+      background-color: #007bff;
+      color: white;
+    
+    }
+  `}
+
+  ${({ variant }) =>
+    variant === "contained" &&
+    `
+    background-color: #007bff;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  `}
+
+
+
+  ${({ variant }) =>
+    variant === "warning" &&
+    `
+    background-color: orange;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: darkorange;
+    }
+  `}
+
+  ${({ variant }) =>
+    variant === "danger" &&
+    `
+    background-color: red;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: darkred;
+    }
+  `}
 `;
 
-export function Button() {
-  return (
-    <div>
-      <StyledButton
-        variant="primary"
-        size="large"
-        onClick={() => alert("Primary Large StyledButton Clicked")}
-      >
-        Primary Large StyledButton
-      </StyledButton>
 
-      <StyledButton variant="secondary" size="small">
-        Secondary Small Button
-      </StyledButton>
 
-      <StyledButton variant="success" disabled>
-        Disabled Success Button
-      </StyledButton>
-    </div>
-  );
-}
