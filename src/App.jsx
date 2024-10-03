@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import TodoForm from "./components/TodoForm";
 import TodoItem from "./components/TodoItem";
-import { Loading } from "./components/Loading";
+import Button from "./components/TodoItem";
+import { Loadings } from "./components/Loadings";
 function App() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,7 @@ function App() {
 
       <h2>{todos.length}</h2>
       {loading ? (
-        <Loading />
+        <Loadings />
       ) : (
         <>
           <TodoForm addTask={addTask} />
@@ -60,6 +61,8 @@ function App() {
           ))}
         </>
       )}
+
+   
     </div>
   );
 }

@@ -1,6 +1,8 @@
+// import { RingLoader } from "react-spinners";
+
 import { RingLoader } from "react-spinners";
 
-export const Loading = () => {
+export const Loadings = () => {
   return (
     <div
       style={{
