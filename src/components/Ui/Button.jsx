@@ -1,74 +1,79 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Button = ({ variant, click, children}) => {
+export default function Button({ children, variant, disabled }) {
   return (
-    <StyledButton variant={variant} onClick={click}>
+    <StyledButton variant={variant} disabled={disabled}>
       {children}
     </StyledButton>
   );
-};
+}
+
 const StyledButton = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
   width: 198px;
-    height: 48px;
-    border-radius: 10px;
-  transition: all 0.3s ease;
+  color: ${(props) =>
+    props.variant === "outlined" ? "rgba(31, 110, 212, 1)" : "white"};
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  border: ${(props) =>
+    props.variant === "outlined" ? "1px solid rgba(31, 110, 212, 1)" : ""};
 
+  background-color: ${(props) =>
+    props.variant === "outlined"
+      ? "white"
+      : props.variant === "contained"
+      ? "rgba(31, 110, 212, 1)"
+      : props.variant === "Warning"
+      ? "rgba(243, 119, 5, 1)"
+      : props.variant === "Danger"
+      ? "rgba(223, 45, 45, 1)"
+      : ""};
+  font-size: ${(props) =>
+    props.variant === "outlined"
+      ? "15px"
+      : props.variant === "contained"
+      ? "20px"
+      : ""};
+  font-weight: ${(props) =>
+    props.variant === "Warning"
+      ? "800"
+      : props.variant === "Danger"
+      ? "100"
+      : ""};
 
-  ${({ variant }) =>
-    variant === "outlined" &&
-    `
-    background-color: transparent;
-    color: #007bff;
-    border: 3px solid #4C94F0;
-  
-    &:hover {
-      background-color: #007bff;
-      color: white;
-    
-    }
-  `}
-
-  ${({ variant }) =>
-    variant === "contained" &&
-    `
-    background-color: #007bff;
-    color: white;
-    border: none;
-
-    &:hover {
-      background-color: #0056b3;
-    }
-  `}
-
-
-
-  ${({ variant }) =>
-    variant === "warning" &&
-    `
-    background-color: orange;
-    color: white;
-    border: none;
-
-    &:hover {
-      background-color: darkorange;
-    }
-  `}
-
-  ${({ variant }) =>
-    variant === "danger" &&
-    `
-    background-color: red;
-    color: white;
-    border: none;
-
-    &:hover {
-      background-color: darkred;
-    }
-  `}
+  &:hover {
+    border: ${(props) =>
+      props.variant === "outlined" ? "3px solid rgba(31, 110, 212, 1)" : ""};
+    height: ${(props) =>
+      props.variant === "contained"
+        ? "53px"
+        : props.variant === "Warning"
+        ? "42px"
+        : ""};
+    width: ${(props) => (props.variant === "Warning" ? "186px" : "")};
+    background-color: ${(props) =>
+      props.variant === "contained"
+        ? "rgba(76, 148, 240, 1)"
+        : props.variant === "Warning"
+        ? "rgba(255, 145, 43, 1)"
+        : props.variant === "Danger"
+        ? "rgba(229, 67, 67, 1)"
+        : ""};
+  }
+  &:active {
+    background-color: ${(props) =>
+      props.variant === "outlined"
+        ? "rgba(0, 82, 188, 1)"
+        : props.variant === "contained"
+        ? "rgba(0, 82, 188, 1)"
+        : props.variant === "Warning"
+        ? "rgba(207, 99, 0, 1)"
+        : props.variant === "Danger"
+        ? "rgba(194, 11, 11, 1)"
+        : ""};
+  }
 `;
 
 
