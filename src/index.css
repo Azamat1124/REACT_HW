@@ -1,12 +1,5 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    display: flex;
-    justify-content: center;
-    margin: 50px;
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
