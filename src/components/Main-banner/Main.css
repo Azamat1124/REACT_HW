@@ -1,0 +1,13 @@
+.banner {
+  align-items: center;
+  width: 100%;
+  height: 532px;
+  opacity: 0px;
+}
+
+.wrapper-delicious {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

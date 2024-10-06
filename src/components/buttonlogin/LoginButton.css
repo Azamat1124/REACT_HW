@@ -1,0 +1,39 @@
+.btnicon {
+  /* margin: 50px; */
+  font-size: 30px;
+  align-items: center;
+  color: #8a2b06;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #8a2b06;
+  width: 70px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+.btnicon:hover {
+  /* fill: #fff; */
+  background-color: #993108;
+  /* stroke: #fff;   */
+}
+
+.btnicon:active {
+  background-color: #993108;
+  color: #ffffff;
+}
+
+.btnicon:hover {
+  path {
+    stroke: #fff;
+  }
+}
+.btnicon:disabled {
+  background-color: #cac6c4;
+  background-color: transparent;
+
+  color: #ffffff;
+}

@@ -1,0 +1,21 @@
+.container-modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modals {
+  width: 671px;
+  max-height: 437px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  overflow-y: auto;
+}

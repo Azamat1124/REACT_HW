@@ -1,0 +1,13 @@
+.header-two {
+  height: 101px;
+  background-color: #8a2b06;
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 120px;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+}
+h1 {
+  color: white;
+}
